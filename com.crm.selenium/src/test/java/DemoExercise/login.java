@@ -28,8 +28,7 @@ public class login {
 
         WebElement loginButton = driver.findElement(By.xpath("//button[normalize-space()='Log In']"));
         loginButton.click();
-
-        // Adding a wait to observe the result
+        
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         // Close the browser
