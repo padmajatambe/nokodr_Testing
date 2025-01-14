@@ -14,5 +14,4 @@ public class basic {
         driver.get("https://app-staging.nokodr.com");
         driver.manage().window().maximize();
 	}
-	
 }
