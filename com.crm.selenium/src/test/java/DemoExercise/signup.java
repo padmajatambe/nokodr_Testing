@@ -34,7 +34,7 @@ public class signup {
         WebElement ClickProceed = driver.findElement(By.xpath("//div[@title='Proceed']"));
         ClickProceed.click();
         
-		// Wait for the verification code input field to be visible
+	// Wait for the verification code input field to be visible
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement verificationCodeField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='code']")));
 
@@ -78,6 +78,6 @@ public class signup {
         WebElement submitButton = driver.findElement(By.xpath("//button[normalize-space()='Register']"));
         submitButton.click();
         // Close the browser
-        //driver.quit();
+        driver.quit();
     }
 }
