@@ -12,11 +12,8 @@ import java.time.Duration;
 public class forgetpassword {
 
     public static void main(String[] args) {
-        // Setup ChromeDriver
-        // System.setProperty("webdriver.chrome.driver", "C:\\path\\to\\chromedriver.exe"); // Update with your path
         WebDriver driver = new ChromeDriver();
-
-        // Visiting the noKodr platform
+        
         driver.get("https://app-staging.nokodr.com/");
         driver.manage().window().maximize();
 
@@ -49,8 +46,6 @@ public class forgetpassword {
                 verifyButton.click();
                 break; // Exit the loop after clicking the button
             }
-
-            // Sleep for a short duration to avoid busy waiting
             try {
                 Thread.sleep(500); // Check every 500 milliseconds
             } catch (InterruptedException e) {
@@ -68,13 +63,10 @@ public class forgetpassword {
         confirmPass.click();
         confirmPass.sendKeys("Padmaja@123456789");
 
-        // Optionally, you can add a submit button click here if needed
-        // WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@title='Submit']")));
-        // submitButton.click();
         WebElement submitButton = driver.findElement(By.xpath("//button[normalize-space()='Confirm']"));
         submitButton.click();
 
         // Close the driver
-        //driver.quit();
+        driver.quit();
     }
 }
